@@ -2,11 +2,10 @@ const express = require('express');
 const app = express();
 
 
-app.use((req, res, next) => {
-   res.status(200).json({
-       message: 'It works!'
-   });
-});
+const subjectRoutes = require('./api/routes/subjects');
+
+
+app.use('/subjects', subjectRoutes);
 
 
 module.exports = app;
