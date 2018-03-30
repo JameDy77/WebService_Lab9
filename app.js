@@ -3,6 +3,8 @@ const app = express();
 const morgan = require('morgan');
 
 app.use(morgan('dev'));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 const subjectRoutes = require('./api/routes/subjects');
 const studentRoutes = require('./api/routes/students');
