@@ -10,6 +10,7 @@ app.use(bodyParser.json());
 
 const subjectRoutes = require('./api/routes/subjects');
 const studentRoutes = require('./api/routes/students');
+const contactRoutes = require('./api/routes/contacts');
 
 const mongodbUri = 'mongodb://myuser:mypasswd@ds123129.mlab.com:23129/mydata';
 mongoose.connect(mongodbUri);
@@ -30,6 +31,7 @@ app.use((req, res, next) => {
 
 app.use('/subjects', subjectRoutes);
 app.use('/students', studentRoutes);
+app.use('/contacts', contactRoutes);
 
 app.use((req, res, next) => {
    const error = new Error('Not found');
